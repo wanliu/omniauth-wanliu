@@ -6,7 +6,7 @@
 
 Add this line to your application's Gemfile:
 
-    gem 'omniauth-wanliu', :github => "huxinghai1988/omniauth-wanliu"
+    gem 'omniauth-wanliu', :github => "wanliu/omniauth-wanliu"
 
 And then execute:
 
