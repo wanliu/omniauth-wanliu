@@ -42,7 +42,7 @@ AjaxAuth.prototype.loginSuccessCallback = function(data){}
 //登陆成功触发
 AjaxAuth.prototype.registreLoginSuccess = function(callback){
     if(typeof callback == "function") this.loginSuccessCallback = callback
-    pm.bind("login_message", $.proxy(function(data){             
+    $.pm.bind("login_message", $.proxy(function(data){             
         this.loginSuccessCallback.apply(this, data)
     }, this)) 
 }
@@ -52,7 +52,7 @@ AjaxAuth.prototype.registreLoadCreateUserCallback = function(){}
 //加载注册页面触发
 AjaxAuth.prototype.registreLoadCreateUser = function(callback){
     if(typeof callback == "function") this.registerLoadCreateUserCallback = callback
-    pm.bind("user_register", this.registerLoadCreateUserCallback)
+    $.pm.bind("user_register", this.registerLoadCreateUserCallback)
 }
 
 AjaxAuth.prototype.registreLoadForgotPasswordCallback = function(){}
@@ -60,7 +60,7 @@ AjaxAuth.prototype.registreLoadForgotPasswordCallback = function(){}
 //加载找回密码触发
 AjaxAuth.prototype.registreLoadForgotPassword = function(callback){
     if(typeof callback == "function") this.registreLoadForgotPasswordCallback = callback
-    pm.bind("user_forgot_password", this.registreLoadForgotPasswordCallback)
+    $.pm.bind("user_forgot_password", this.registreLoadForgotPasswordCallback)
 }
 
 AjaxAuth.prototype.setupAjaxAuthCallback = function(url){}
