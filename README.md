@@ -70,13 +70,17 @@ And then execute:
     AjaxAuthClient.registreLoginSuccess(function(user){        
     })
 
-    //加载注册页面触发事件
+    //注册加载用户注册回调事件
     AjaxAuthClient.registreLoadCreateUser(function(){
     })
 
-    //加载找回密码触发事件
+    //注册加载用户找回密码回调事件
     AjaxAuthClient.registreLoadForgotPassword(function(){
-    })  
+    })
+
+    //注册加载用户登陆回调事件
+    AjaxAuthClient.registreLoadUserLogin(function(){
+    })
 
   ```
 

@@ -10,13 +10,17 @@
 //    AjaxAuthClient.registreLoginSuccess(function(user){
 //    })
 //      
-//    #加载注册页面触发事件
+//    #加载注册页面回调事件
 //    AjaxAuthClient.registreLoadCreateUser(function(){
 //    })
 //
-//    #加载找回密码触发事件
+//    #加载找回密码页面回调事件
 //    AjaxAuthClient.registreLoadForgotPassword(function(){
-//    })  
+//    })
+//
+//    #加载登陆页面回调事件  
+//    AjaxAuthClient.registreLoadUserLogin(function(){
+//    })
 
 var AjaxAuth = function(options){
 
@@ -61,6 +65,14 @@ AjaxAuth.prototype.registreLoadForgotPasswordCallback = function(){}
 AjaxAuth.prototype.registreLoadForgotPassword = function(callback){
     if(typeof callback == "function") this.registreLoadForgotPasswordCallback = callback
     $.pm.bind("user_forgot_password", this.registreLoadForgotPasswordCallback)
+}
+
+AjaxAuth.prototype.registreLoadUserLoginCallback = function(){}
+
+//加载登陆页面触发
+AjaxAuth.prototype.registreLoadUserLogin = function(callback){
+    if(typeof callback == "function") this.registreLoadUserLoginCallback = callback
+    $.pm.bind("user_login", this.registreLoadUserLoginCallback)
 }
 
 AjaxAuth.prototype.setupAjaxAuthCallback = function(url){}
