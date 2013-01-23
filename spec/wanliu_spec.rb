@@ -61,6 +61,7 @@ describe OmniAuth::Strategies::WanliuId do
         it "should have correct user info" do             
             subject.info[:email].should eq(@data["info"]["email"])
             subject.info[:name].should eq(@data["info"]["name"])
+            subject.info[:login].should eq(@data["info"]["login"])
         end        
     end
 
